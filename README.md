@@ -6,10 +6,14 @@ Diseñar y desarrollar una mascota virtual con características visuales y de pe
 
 
 INTEGRANTES:
-NOMBRE                                 N CONTROL
+
 Ruiz Sandoval Kevin Yael               18141051
+
 Pablo Odin López Holguín               18141040
+
 José Eduardo Luna Vazquez              19141168
+
 Velasco Izquierdo Fidel Alejandro      19270623
+
 Lopez Solis Emanuel Andree             18141057
 
