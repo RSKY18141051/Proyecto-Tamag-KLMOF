@@ -1,0 +1,39 @@
+#convierte la voz en texto y lo lee
+#libreria que permite convertir la voz en texto
+#pip install SpeechRecognition
+import speech_recognition as sr
+#libreria que permite convertir texto en voz
+#pip install gTTS
+#pip install playsound
+from gtts import gTTS
+import playsound
+import random
+#le agregamos una variable para reonosca la voz
+recognizer = sr.Recognizer()
+#ahora para que pueda utilizar el microfono en timepo real
+mic = sr.Microphone()
+
+
+try:
+    with mic as source:
+    #que guarde el sonido
+        print("Habla algo...")
+        audio = recognizer.listen(source)
+        print("Audio capturado. Procesando...")
+
+    #Reconocimiento de voz y el lenguaje
+    text = recognizer.recognize_google(audio, language = 'ES')
+    print(f'Transcripción: {text}')
+
+    # Convierte el texto en voz
+    tts = gTTS(text, lang='es')
+
+    #cambiar nombre aleatorio
+    num_alet = random.randint(1, 100)
+    tts.save("output.mp3")
+
+    # Reproduce el archivo de audio
+    playsound.playsound("output.mp3")
+except sr.UnknownValueError:
+    print("No se pudo entender lo que dijiste")
+
